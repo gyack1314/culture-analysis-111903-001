@@ -1,0 +1,7 @@
+# 合成分析资料契约
+
+所有机构、企业、受访者、交易和事件均为本地合成，不来自新闻所涉真实主体，不声称新闻发生过这些分析问题。
+
+seed.json与同名Parquet是相同原始值的两种载体；actions.json列尚未应用的后续输入动作。inventory.json只记录原件物理摘要和行数，不提供分析结论。时间均含时区或明确日期，金钱字段minor以CNY分计，空值保留未知含义。已有代码只做物理完整性检查，没有估计、预测、方案求解或产品发布功能。
+
+assignments中的cluster/block才是随机分配单位，household是分配前登记的目标家庭；arm为offer/control，p_offer是设计概率。enrollment在时段开始前确定，不得以购买或核销筛人。blocks的start/end为左闭右开，前一时段结束后有washout_minutes，落入洗脱期的交易单列，不归入下一时段。两组净支出差是主目标，净支出为已支付订单减已确认退款；效果归属按下单时段，退款以analysis_cutoff时已知且已确认者计。订单后满refund_horizon_days才为成熟，缺少完成回执不推定成熟。exposures是观测而非随机分配，cross_cluster表示跨组接触；null代表未知。主目标是所有预登记家庭的每家庭净消费与补贴后增量贡献。looks为试验开始前确定的查看时点，executed_looks表示确已查看；两者都不是显著性结果。所有货币为CNY分，空白不是0。

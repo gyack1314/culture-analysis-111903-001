@@ -1,0 +1,7 @@
+{
+  "refund_horizon_days": 3,
+  "primary": "net_spend_per_enrolled_household",
+  "currency": "CNY",
+  "randomization": "independently in each 4-cluster design_stratum, uniformly draw 2 offer clusters for first block; following blocks alternate assignments; all 6 choices per stratum possible; draw fixed before enrollment",
+  "target": "pre-enrolled households"
+}
